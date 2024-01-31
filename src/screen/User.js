@@ -38,8 +38,9 @@ const User = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:9004/nombres')
+            const response = await fetch('http://192.168.1.65:9004/nombres')
             const jsonData = await response.json()
+            console.log(jsonData)
             setUsers(jsonData)
         } catch (e) {
             console.error('error', e)
@@ -49,7 +50,7 @@ const User = () => {
 
     const deleteUser = async (item) => {
         try {
-            const response = await fetch(`http://localhost:9004/nombres/${item.id}`, {
+            const response = await fetch(`http://192.168.1.65:9004/nombres/${item.id}`, {
                 method: 'DELETE'
             })
             if (response.status === 204) {
@@ -63,7 +64,7 @@ const User = () => {
 
     const editUser = async () => {
         try {
-            const response = await fetch(`http://localhost:9004/nombres/${selectedUser.id}`, {
+            const response = await fetch(`http://192.168.1.65:9004/nombres/${selectedUser.id}`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": 'application/json'
@@ -91,7 +92,7 @@ const User = () => {
     }
     const createUser = async () => {
         try {
-            const response = await fetch('http://localhost:9004/nombres', {
+            const response = await fetch('http://192.168.1.65:9004/nombres', {
                 method: 'POST',
                 headers: {
                     "Content-Type": 'application/json'
