@@ -15,8 +15,7 @@ const Pdf = () => {
             const data = new FormData()
             data.append('question', question)
             data.append('file', pdfDoc)
-            console.log(data.get('file'))
-            const response = await fetch('http://localhost:9004/upload', {
+            const response = await fetch(`http://${global.ip}:${global.port}/upload`, {
                 method: 'POST',
                 body: data
             })

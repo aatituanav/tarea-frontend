@@ -8,7 +8,7 @@ const Chat = () => {
 
     const getResultFromOpenApi = async () => {
         try {
-            const response = await fetch('http://localhost:9004/openapi', {
+            const response = await fetch(`http://${global.ip}:${global.port}/openapi`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": 'application/json'

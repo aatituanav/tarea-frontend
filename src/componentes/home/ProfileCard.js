@@ -2,18 +2,25 @@ import React from "react";
 import { View, Text, StyleSheet, Image, Linking, TouchableWithoutFeedback, ImageBackground } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+const imagen = require('../../../assets/kwai.png'); // Ruta de tu imagen en .assets
+
 const twitter = <Icon name={'twitter-square'} size={30} color={'white'} />
+const kwai = <Image source={imagen} style={{ width: 30, height: 30, tintColor: 'white' }} />;
 const facebook = <Icon name={'facebook-square'} size={30} color={'white'} />
 const instagram = <Icon name={'instagram'} size={30} color={'white'} />
 const whatsapp = <Icon name={'whatsapp'} size={30} color={'white'} />
 const youtube = <Icon name={'youtube-play'} size={30} color={'white'} />
 const drive = <Icon name={'google'} size={30} color={'white'} />
+
+
 const ProfileCard = () => {
     const user = {
-        avatar: "https://img.freepik.com/vector-gratis/avatar-personaje-empresario-aislado_24877-60111.jpg",
+        avatar: "https://firebasestorage.googleapis.com/v0/b/tinderperros-161f1.appspot.com/o/IMG_20210817_093223304%20(1).jpg?alt=media&token=d2e17d9b-bb61-457d-af3f-51a0a17a93d8",
         coverPhoto: "https://t4.ftcdn.net/jpg/05/71/83/47/360_F_571834789_ujYbUnH190iUokdDhZq7GXeTBRgqYVwa.jpg",
-        name: "Pepe Botella"
+        name: "Andres Tituana"
     }
+   
+
     return (
         <>
             <ImageBackground source={{ uri: user.coverPhoto }} style={styles.coverPhoto}>
@@ -26,7 +33,7 @@ const ProfileCard = () => {
                     </View>
                     <View style={styles.buttonContainer}>
                         <TouchableWithoutFeedback style={{ color: 'blue' }} onPress={() => {
-                            Linking.openURL('https://facebook.com/')
+                            Linking.openURL('https://www.facebook.com/andres.tituanna')
                         }}>
                             {facebook}
                         </TouchableWithoutFeedback>
@@ -36,7 +43,7 @@ const ProfileCard = () => {
                             {twitter}
                         </TouchableWithoutFeedback>
                         <TouchableWithoutFeedback style={{ color: 'blue' }} onPress={() => {
-                            Linking.openURL('https://instagram.com/')
+                            Linking.openURL('https://www.instagram.com/andres.tituana/')
                         }}>
                             {instagram}
                         </TouchableWithoutFeedback>
@@ -44,7 +51,7 @@ const ProfileCard = () => {
                             {whatsapp}
                         </TouchableWithoutFeedback>
                         <TouchableWithoutFeedback onPress={() => Linking.openURL('https://drive.com/')}>
-                            {drive}
+                            {kwai}
                         </TouchableWithoutFeedback>
                         <TouchableWithoutFeedback onPress={() => Linking.openURL('https://youtube.com/')}>
                             {youtube}
